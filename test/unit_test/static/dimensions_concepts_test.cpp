@@ -32,6 +32,7 @@
 #include <units/physical/si/length.h>
 #include <units/physical/si/luminous_intensity.h>
 #include <units/physical/si/mass.h>
+#include <units/physical/si/mass_flow_rate.h>
 #include <units/physical/si/power.h>
 #include <units/physical/si/pressure.h>
 #include <units/physical/si/substance.h>
@@ -105,5 +106,8 @@ static_assert(!SurfaceTension<si::time<si::second>>);
 
 static_assert(Pressure<si::pressure<si::pascal>>);
 static_assert(!Pressure<si::time<si::second>>);
+
+static_assert(MassFlowRate<si::mass_flow_rate<si::kilogram_per_second>>);
+static_assert(!MassFlowRate<si::time<si::second>>);
 
 }

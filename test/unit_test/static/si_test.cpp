@@ -31,6 +31,7 @@
 #include <units/physical/si/length.h>
 #include <units/physical/si/luminous_intensity.h>
 #include <units/physical/si/mass.h>
+#include <units/physical/si/mass_flow_rate.h>
 #include <units/physical/si/power.h>
 #include <units/physical/si/pressure.h>
 #include <units/physical/si/substance.h>
@@ -241,6 +242,11 @@ static_assert(1dm * 1dm * 1dm == 1_l);
 static_assert(1000_l == 1m3);
 
 static_assert(detail::unit_text<dim_volume, cubic_metre>() == "m³");
+
+// mass flow rate
+
+static_assert(10kg / 1s == 10kgps);
+static_assert(kilogram_per_hour::symbol == "kg/h");
 
 /* ************** DERIVED DIMENSIONS IN TERMS OF OTHER UNITS **************** */
 
