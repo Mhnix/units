@@ -52,7 +52,7 @@ add_library(units INTERFACE)
 target_compile_features(units INTERFACE cxx_std_20)
 target_link_libraries(units
     INTERFACE
-        CONAN_PKG::fmt
+        fmt::fmt
 )
 target_include_directories(units
     INTERFACE
@@ -62,7 +62,7 @@ target_include_directories(units
 if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_link_libraries(units
         INTERFACE
-            CONAN_PKG::range-v3
+            range-v3
     )
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(units
@@ -78,7 +78,7 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
         )
         target_link_libraries(units
             INTERFACE
-                CONAN_PKG::range-v3
+                range-v3
         )
     endif()
 endif()

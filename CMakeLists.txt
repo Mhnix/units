@@ -29,8 +29,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 # include common tools and workarounds
 include(common/cmake/scripts)
 
-# use Conan configuration if available
-conan_init(cmake)
+find_package(fmt REQUIRED)
+find_package(range-v3 REQUIRED)
+find_package(Catch2 REQUIRED)
 
 # enable static analysis
 #enable_clang_tidy()

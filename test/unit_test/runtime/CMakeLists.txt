@@ -20,9 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-# check if conan installed a test framework
-conan_check_testing(Catch2)
-
 add_executable(unit_tests_runtime
     catch_main.cpp
     digital_info_test.cpp
@@ -33,5 +30,5 @@ add_executable(unit_tests_runtime
 target_link_libraries(unit_tests_runtime
     PRIVATE
         mp::units
-        CONAN_PKG::Catch2
+        Catch2::Catch2
 )
