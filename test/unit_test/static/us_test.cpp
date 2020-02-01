@@ -27,6 +27,7 @@
 #include <units/physical/si/volume.h>
 #include <units/physical/international/area.h>
 #include <units/physical/us/length.h>
+#include <units/physical/us/mass.h>
 #include <units/physical/international/velocity.h>
 #include <units/physical/international/volume.h>
 #include <utility>
@@ -48,6 +49,10 @@ static_assert(1ft == 12in);
 static_assert(1mi == 1760yd);
 
 static_assert(5in + 8cm == 207mm);
+
+// mass
+
+static_assert(1oz_us == 28.349523125g);
 
 
 /* ************** DERIVED DIMENSIONS IN TERMS OF BASE UNITS **************** */
