@@ -107,6 +107,9 @@ struct dim_surface_tension : derived_dimension<Child, U, exp<F, 1>, exp<L, -1>> 
 template<typename Child, Unit U, DimensionOf<dim_force> F, DimensionOf<dim_area> A>
 struct dim_pressure : derived_dimension<Child, U, exp<F, 1>, exp<A, -1>> {};
 
+template<typename Child, Unit U, DimensionOf<dim_mass> M, DimensionOf<dim_time> T>
+struct dim_mass_flow_rate : derived_dimension<Child, U, exp<M, 1>, exp<T, -1>> {};
+
 }  // namespace physical
 
 template<typename T>
@@ -168,5 +171,8 @@ concept SurfaceTension = physical::QuantityOf<T, physical::dim_surface_tension>;
 
 template<typename T>
 concept Pressure = physical::QuantityOf<T, physical::dim_pressure>;
+
+template<typename T>
+concept MassFlowRate = physical::QuantityOf<T, physical::dim_mass_flow_rate>;
 
 }  // namespace units
